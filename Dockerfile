@@ -47,6 +47,7 @@ RUN mkdir -p /app && rm -fr /usr/share/nginx/html && ln -s /app /usr/share/nginx
 
 RUN rm -rf /etc/nginx/conf.d/default.conf
 ADD nginx/default.conf /etc/nginx/conf.d/default.conf
+ADD php/www.conf /etc/php/7.1/fpm/pool.d/www.conf
 
 RUN sed -i "s/user  nginx;/user  www-data;/g" /etc/nginx/nginx.conf
 
